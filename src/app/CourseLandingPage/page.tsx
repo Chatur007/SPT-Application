@@ -260,7 +260,7 @@ export default function CoursePage() {
           <>
             {/* Overview Content */}
             <div className="bg-white shadow-md rounded-xl p-6">
-              <h2 className="text-lg text-gray-700 font-bold mb-4">What you'll learn</h2>
+              <h2 className="text-lg text-gray-700 font-bold mb-4">What you will learn</h2>
               <div className="grid md:grid-cols-2 gap-3 text-gray-700 text-sm">
                 <p className="flex items-center gap-2">
                   <FontAwesomeIcon icon={faCheck} /> Build modern web applications with React
