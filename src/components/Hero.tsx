@@ -84,4 +84,6 @@ export default function Hero({ scrollToSection }: HeroProps = {}) {
       </div>
     </section>
   );
+
+
 }
