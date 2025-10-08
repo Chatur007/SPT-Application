@@ -407,7 +407,7 @@ export default function CoursePage() {
           <div className="bg-white shadow-md rounded-xl p-6">
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Career Opportunities</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              After completing this comprehensive course, you'll have access to diverse career paths and exciting opportunities in the tech industry.
+              After completing this comprehensive course, you will have access to diverse career paths and exciting opportunities in the tech industry.
             </p>
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800">Your Future Paths:</h3>
