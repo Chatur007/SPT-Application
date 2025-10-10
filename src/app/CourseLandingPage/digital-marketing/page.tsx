@@ -24,6 +24,70 @@ const courseHandoutData = [
     lab: "1",
     outcomes: "Learn OS basics and usage"
   },
+  {
+    sno: 3,
+    chapter: "Word Processing",
+    duration: "12",
+    theory: "4",
+    lab: "8",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 4,
+    chapter: "Spread Sheet",
+    duration: "12",
+    theory: "3",
+    lab: "9",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 5,
+    chapter: "Presentation",
+    duration: "12",
+    theory: "3",
+    lab: "9",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 6,
+    chapter: "Introduction To Internet and WWW",
+    duration: "7",
+    theory: "3",
+    lab: "4",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 7,
+    chapter: "E-mail, Social, Networking And E-Governance Services",
+    duration: "9",
+    theory: "3",
+    lab: "9",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 8,
+    chapter: "Digital Financial tools and Applications",
+    duration: "8",
+    theory: "3",
+    lab: "5",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 9,
+    chapter: "Overview Of Cyber Security",
+    duration: "8",
+    theory: "3",
+    lab: "5",
+    outcomes: "Learn OS basics and usage"
+  },
+   {
+    sno: 10,
+    chapter: "Overview of Future Skills and AI",
+    duration: "9",
+    theory: "3",
+    lab: "6",
+    outcomes: "Learn OS basics and usage"
+  },
   // Add more rows as needed
 ];
 
@@ -46,7 +110,6 @@ export default function CoursePage() {
   const featuresSubMenu = [
     { id: "library", name: "Library" },
     { id: "online-test", name: "Online Test" },
-    { id: "demo-class", name: "Demo Class" },
   ];
 
   const getDisplayName = (item: string) => {
@@ -264,9 +327,9 @@ export default function CoursePage() {
           <p className="text-xs sm:text-sm opacity-80 mb-2 cursor-pointer">
             <span>
               <Link href="/" className="text-white cursor-pointer hover:-translate-y-1 font-bold transition-transform">Home</Link>
-            </span> &gt; Course On Computer Concepts
+            </span> &gt; Digital Marketing
           </p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Course On Computer Concepts</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Digital Marketing</h1>
         </div>
       </div>
 
@@ -289,35 +352,36 @@ export default function CoursePage() {
       </div>
 
       {/* Course Content - All Sections Visible */}
-      <div
-        className="py-12 space-y-16"
-        style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
-      >
-        {/* Overview Section */}
-        <section id="overview" className="scroll-mt-32">
-          <div className="bg-white shadow-md rounded-xl p-6">
+      <div className="space-y-0">
+        {/* Overview Section (text left, video right) - Light shade */}
+        <section id="overview" className="scroll-mt-32 bg-white py-12">
+          <div 
+            className="mx-auto px-6"
+            style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
+          >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Overview</h2>
             <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="text-gray-800 space-y-5">
                 <p>
-                  We offer a range of courses from basic computer literacy to advanced programming and digital skills. Each course is designed to combine theory with hands-on practice and real-world projects.
+                  The Digital Marketing program covers SEO, social media marketing, content strategy, paid advertising, and analytics. It's built for small business owners, marketers, and students who want practical digital marketing skills.
                 </p>
                 <div>
-                  <span className="font-semibold text-lg">Why Choose Us?</span>
+                  <span className="font-semibold text-lg">🎯 Objectives</span>
                   <ul className="list-disc list-inside ml-5 mt-2 space-y-1">
-                    <li>Experienced instructors and practical curriculum.</li>
-                    <li>Project-based learning and placement assistance.</li>
-                    <li>Flexible schedules and certification support.</li>
+                    <li>Understand core digital marketing channels and tactics.</li>
+                    <li>Create data-driven campaigns and measure ROI.</li>
+                    <li>Build a personal or business digital presence.</li>
                   </ul>
                 </div>
               </div>
 
               <div className="flex items-center justify-center">
                 <div className="relative w-full max-w-md">
-                    <div className="overflow-hidden rounded-lg shadow-lg bg-black/5 cursor-pointer">
-                      <img src="/images/ccc-removebg-preview.png" alt="Courses overview" className="w-full h-56 object-cover" />
-                      <button
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black rounded-full flex items-center justify-center shadow-md ring-4 ring-black/20 cursor-pointer text-white"
+                  <div className="overflow-hidden rounded-lg shadow-lg bg-black/5">
+                    <img src="/images/Introduction_to_Digital_Marketing-1680153233.png" alt="Digital Marketing overview" className="w-full h-56 object-cover" />
+                    <button
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black rounded-full flex items-center justify-center shadow-md ring-4 ring-black/20 cursor-pointer text-white"
+                      aria-label="Play Digital Marketing overview"
                       onClick={() => { setVideoUrl('https://www.youtube.com/embed/dQw4w9WgXcQ'); setVideoModalOpen(true); }}
                     >
                       ▶
@@ -329,18 +393,26 @@ export default function CoursePage() {
           </div>
         </section>
 
-        {/* Course Handout Section */}
-        <section id="course-handout" className="scroll-mt-32">
-          <div className="bg-white shadow-md rounded-xl p-6 overflow-x-auto">
+        {/* Course Handout Section - Gray shade */}
+        <section id="course-handout" className="scroll-mt-32 bg-gray-50 py-12">
+          <div 
+            className="mx-auto px-6"
+            style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
+          >
             <h2 className="text-2xl text-black font-bold mb-6">Course Handout</h2>
             {/* Data-driven table for easy updates */}
-            <HandoutTableBlock />
+            <div className="overflow-x-auto">
+              <HandoutTableBlock />
+            </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section id="benefits" className="scroll-mt-32">
-          <div className="bg-white shadow-md rounded-xl p-6">
+        {/* Benefits Section - Light shade */}
+        <section id="benefits" className="scroll-mt-32 bg-white py-12">
+          <div 
+            className="mx-auto px-6"
+            style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
+          >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Benefits</h2>
             <div className="space-y-4">
               <ul className="list-disc list-inside text-gray-700 space-y-3">
@@ -356,15 +428,19 @@ export default function CoursePage() {
           </div>
         </section>
 
-        {/* Job Market Section */}
-        <section id="job-market" className="scroll-mt-32">
-          <div className="bg-white shadow-md rounded-xl p-6">
+        {/* Job Market Section - Gray shade */}
+        <section id="job-market" className="scroll-mt-32 bg-gray-50 py-12">
+          <div 
+            className="mx-auto px-6"
+            style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
+          >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Job Market</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              The demand for full stack developers is rapidly growing across industries. Companies are seeking professionals who can handle both frontend and backend development, making you highly employable in today&apos;s competitive market.
+              The demand for full stack developers is rapidly growing across industries. Companies are seeking professionals who can handle both frontend and backend development, making you highly employable in today's competitive market.
             </p>
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">Market Opportunities:</h3>              <ul className="list-disc list-inside text-gray-700 space-y-3">
+              <h3 className="text-lg font-semibold text-gray-800">Market Opportunities:</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-3">
                 <li className="text-sm">Opportunities in tech startups and established companies</li>
                 <li className="text-sm">Remote and onsite job options available globally</li>
                 <li className="text-sm">Competitive salaries ranging from ₹4-15 LPA</li>
@@ -375,12 +451,15 @@ export default function CoursePage() {
           </div>
         </section>
 
-        {/* Opportunities Section */}
-        <section id="opportunities" className="scroll-mt-32">
-          <div className="bg-white shadow-md rounded-xl p-6">
+        {/* Opportunities Section - Light shade */}
+        <section id="opportunities" className="scroll-mt-32 bg-white py-12">
+          <div 
+            className="mx-auto px-6"
+            style={{ width: 'calc(100% - 400px)', marginLeft: '160px', maxWidth: '100%' }}
+          >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Career Opportunities</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              After completing this comprehensive course, you will have access to diverse career paths and exciting opportunities in the tech industry.
+              After completing this comprehensive course, you'll have access to diverse career paths and exciting opportunities in the tech industry.
             </p>
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800">Your Future Paths:</h3>
