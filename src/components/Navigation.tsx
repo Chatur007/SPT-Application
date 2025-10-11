@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faChevronDown, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+
 
 interface NavigationProps {
   activeSection: string;
@@ -90,8 +92,9 @@ export default function Navigation({
                             if (subItem.id === 'online-test') {
                               try {
                                 // dynamic import to get router client helper
-                                const { useRouter } = require('next/navigation');
-                                const router = (typeof window !== 'undefined' && require('next/navigation').useRouter) ? require('next/navigation').useRouter() : null;
+                                const router = typeof window !== "undefined" ? useRouter() : null;
+                                // const { useRouter } = require('next/navigation');
+                                // const router = (typeof window !== 'undefined' && require('next/navigation').useRouter) ? require('next/navigation').useRouter() : null;
                                 if (router && typeof router.push === 'function') router.push('/online-test');
                                 else window.location.href = '/online-test';
                               } catch (e) {
