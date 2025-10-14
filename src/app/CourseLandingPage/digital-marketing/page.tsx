@@ -363,7 +363,7 @@ export default function CoursePage() {
             <div className="grid md:grid-cols-2 gap-6 items-start">
               <div className="text-gray-800 space-y-5">
                 <p>
-                  The Digital Marketing program covers SEO, social media marketing, content strategy, paid advertising, and analytics. It's built for small business owners, marketers, and students who want practical digital marketing skills.
+                  The Digital Marketing program covers SEO, social media marketing, content strategy, paid advertising, and analytics. It is built for small business owners, marketers, and students who want practical digital marketing skills.
                 </p>
                 <div>
                   <span className="font-semibold text-lg">🎯 Objectives</span>
@@ -436,7 +436,7 @@ export default function CoursePage() {
           >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Job Market</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              The demand for full stack developers is rapidly growing across industries. Companies are seeking professionals who can handle both frontend and backend development, making you highly employable in today's competitive market.
+              The demand for full stack developers is rapidly growing across industries. Companies are seeking professionals who can handle both frontend and backend development, making you highly employable in today&apos;s competitive market.
             </p>
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800">Market Opportunities:</h3>
@@ -459,7 +459,9 @@ export default function CoursePage() {
           >
             <h2 className="text-2xl text-gray-800 font-bold mb-6">Career Opportunities</h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
+
               After completing this comprehensive course, you&apos;ll have access to diverse career paths and exciting opportunities in the tech industry.
+
             </p>
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800">Your Future Paths:</h3>
