@@ -7,11 +7,7 @@ import {
   faEnvelope, 
   faPhone, 
   faMapMarkerAlt, 
-  faClock, 
-  faQuestionCircle,
-  faHeadset,
   faPaperPlane,
-  faUsers
 } from "@fortawesome/free-solid-svg-icons";
 // import { constants } from "buffer";
 
@@ -77,15 +73,15 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <FontAwesomeIcon icon={faHeadset} className="text-4xl text-purple-600" />
+            {/* <FontAwesomeIcon icon={faHeadset} className="text-4xl text-purple-600" /> */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Get In Touch</h2>
-            <FontAwesomeIcon icon={faUsers} className="text-4xl text-blue-600" />
+            {/* <FontAwesomeIcon icon={faUsers} className="text-4xl text-blue-600" /> */}
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Ready to start your learning journey? Contact our expert team for personalized guidance and course recommendations.
-          </p>
+          </p> */}
           
-          {/* Quick Stats */}
+          {/* Quick Stats
           <div className="flex items-center justify-center gap-8 mb-8">
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">24hrs</div>
@@ -99,15 +95,14 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
               <div className="text-2xl font-bold text-purple-600">500+</div>
               <div className="text-sm text-gray-600">Students Helped</div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid xl:grid-cols-3 gap-8 mb-16">
-          {/* Contact Form - Takes 2 columns on large screens */}
-          <div className="xl:col-span-2">
+        {/* Contact Form - Centered Column */}
+        <div className="flex justify-center mb-16">
+          <div className="w-full max-w-4xl">
             <div className="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center justify-center gap-3 mb-8">
                 <FontAwesomeIcon icon={faPaperPlane} className="text-2xl text-purple-600" />
                 <h3 className="text-3xl font-bold text-gray-900">Send us a Message</h3>
               </div>
@@ -145,23 +140,25 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
-                      Phone Number
+                      Phone Number *
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-purple-600 focus:outline-none transition-all duration-300 hover:border-gray-300 bg-gray-50 focus:bg-white"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-gray-700 font-semibold mb-2">
-                      Course Interest
+                      Course Interest *
                     </label>
                     <select
                       id="subject"
                       name="subject"
+                      required
                       className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-purple-600 focus:outline-none transition-all duration-300 hover:border-gray-300 bg-gray-50 focus:bg-white"
                     >
                       <option value="">Select your interest</option>
@@ -180,14 +177,13 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
                 
                 <div>
                   <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-                    Your Message *
+                    Your Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     placeholder="Tell us about your goals, questions, or how we can help you..."
-                    required
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-purple-600 focus:outline-none transition-all duration-300 hover:border-gray-300 bg-gray-50 focus:bg-white resize-none"
                   />
                 </div>
@@ -204,73 +200,48 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
                     type="reset"
                     className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:transform hover:-translate-y-1 cursor-pointer border-2 border-gray-200 hover:border-gray-300"
                   >
-                    Reset Form
+                    Reset
                   </button>
                 </div>
               </form>
             </div>
           </div>
+        </div>
 
-          {/* FAQ Section - Takes 1 column */}
-          <div className="xl:col-span-1">
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 h-full">
-              <div className="flex items-center gap-3 mb-8">
-                <FontAwesomeIcon icon={faQuestionCircle} className="text-2xl text-blue-600" />
-                <h3 className="text-2xl font-bold text-gray-900">FAQ</h3>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                {faqs.map((faq, index) => (
-                  <div key={index} className="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300   ease-in-out transform hover:-translate-y-1">
-                   {/* <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4"> */}
-                    <button onClick={()=>toggleFAQ(index)}
-                    className="w-full text-left bg-gradient-to-r from-purple-50 to-blue-50 p-4 flex justify-between items-center cursor-pointer">
-                      <h4 className="font-bold text-gray-900 text-sm">{faq.question}</h4>
-                      <span className="text-gray-500 text-lg cursor-pointer select-none">
-                        {openIndex===index?"-":"+"}
-                      </span>
-                      </button>
-                      {/* answer */}
-                      <div
-                      className={`transition-all duration-300 ease-in-out ${
-                        openIndex === index ? "max-h-40 p-4" : "max-h-0 p-0"
-                      } overflow-hidden`}
-                    >
-                      <p className="text-gray-700 text-sm leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Contact Hours */}
-              <div className="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-xl border border-green-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <FontAwesomeIcon icon={faClock} className="text-green-600" />
-                  <h4 className="font-bold text-green-900">Contact Hours</h4>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-gray-700">Mon - Fri:</span>
-                    <span className="text-gray-600">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-gray-700">Saturday:</span>
-                    <span className="text-gray-600">10:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-gray-700">Sunday:</span>
-                    <span className="text-red-600 font-semibold">Closed</span>
-                  </div>
+        {/* FAQ Section - Below Contact Form, Centered */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">FAQ</h3>
+            {/* <FontAwesomeIcon icon={faQuestionCircle} className="text-3xl text-blue-600" />w-300 mx-auto space-y-4  */}
+          </div>
+          
+          <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-[1250px] mx-auto space-y-4 px-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                <button onClick={() => toggleFAQ(index)}
+                  className="w-full text-left bg-gradient-to-r from-purple-50 to-blue-50 p-4 flex justify-between items-center cursor-pointer">
+                  <h4 className=" text-gray-900 text-xl">{faq.question}</h4>
+                  <span className="text-gray-500 text-lg cursor-pointer select-none">
+                    {openIndex === index ? "-" : "+"}
+                  </span>
+                </button>
+                {/* answer */}
+                <div
+                  className={`transition-all duration-300 ease-in-out ${
+                    openIndex === index ? "max-h-40 p-4" : "max-h-0 p-0"
+                  } overflow-hidden`}
+                >
+                  <p className="text-gray-700 text-lg leading-relaxed text-left">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* <div className="grid md:grid-cols-3 gap-8">
           {contactCards.map((contact, index) => (
             <div
               key={index}
@@ -289,7 +260,7 @@ export default function Contact({ handleFormSubmit }: ContactProps) {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
