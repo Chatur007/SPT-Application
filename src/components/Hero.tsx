@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import InstallButton from "./InstallButton";
 
 interface HeroProps {
   scrollToSection?: (sectionId: string) => void;
@@ -54,13 +55,14 @@ export default function Hero({ scrollToSection }: HeroProps = {}) {
   and gain the skills to excel in the digital era.
         </p>
         
-        <div className="mb-12">
+        <div className="mb-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
             onClick={() => scrollToSection && scrollToSection('contact')}
             className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:transform hover:-translate-y-1 cursor-pointer"
           >
             CONTACT US
           </button>
+          <InstallButton />
         </div>
 
         {/* Statistics */}
